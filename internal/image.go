@@ -9,10 +9,6 @@ import (
 	"github.com/fogleman/gg"
 )
 
-type RGB struct {
-	R, G, B int
-}
-
 func CreateImage(W, H int, writer *bytes.Buffer) {
 	dc := gg.NewContext(W, H)
 

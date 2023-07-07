@@ -10,6 +10,11 @@ import (
 )
 
 func WriteText(dc *gg.Context, text string, x float64, y float64) {
+	// Ignore text if it's too small.
+	if x < 100 {
+		return
+	}
+
 	fontBytes, err := os.ReadFile("assets/Poppins-Regular.ttf")
 	if err != nil {
 		panic(err)
@@ -20,7 +25,13 @@ func WriteText(dc *gg.Context, text string, x float64, y float64) {
 		log.Fatal(err)
 	}
 
-	face := truetype.NewFace(font, &truetype.Options{Size: 48})
+	fontSize := 48.0
+
+	if x < 250 || y < 100 {
+		fontSize = 24.0
+	}
+
+	face := truetype.NewFace(font, &truetype.Options{Size: fontSize})
 
 	dc.SetFontFace(face)
 
