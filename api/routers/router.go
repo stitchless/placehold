@@ -25,6 +25,11 @@ func SetupRouter() *gin.Engine {
 		AllowWebSockets:        false,
 	}))
 
+	r.GET("/", handlers.HomePageHandler)
+
+	r.GET("/:width/:height", handlers.SimpleImageHandler)
+	r.GET("/:width", handlers.SimpleImageHandler)
+
 	image := r.Group("/i")
 	{
 		image.GET("/:width/:height", handlers.SimpleImageHandler)
