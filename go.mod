@@ -7,7 +7,7 @@ require (
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
-	golang.org/x/image v0.9.0 // indirect
+	golang.org/x/image v0.10.0 // indirect
 )
 
 require (
